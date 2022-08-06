@@ -1,0 +1,118 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffcd4f;
+  display: flex;
+  min-height: 155vh;
+}
+
+.containerDetails{
+  background-color: white;
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: 'Pokemon Solid', Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 10px #2019f6eb;
+}
+
+.title{
+  margin: 10px 30px 10px 30px;
+  padding: 10px 0px 10px 0px;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.home{
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 10px;
+}
+
+.exit{
+  color: #2019f6eb;
+  text-decoration: none;
+}
+
+.exit:hover{
+  color: #2b96e2;
+}
+
+.subtitles{
+  background-image: linear-gradient(to right, #468ef1, #2019f6eb);
+  padding: 5px 15px 5px 15px;
+  color: white;
+  font-weight: lighter;
+  border-radius: 30px;
+}
+
+.imageTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.containerHome{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.statsContainer{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.statFlex{
+  margin: 10px 10px 10px 10px;
+}
+
+.stat{
+  margin: 0px;
+  padding: 4px 20px 4px 20px;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.value{
+  /* font-weight: bolder; */
+  color: #FFC325;
+  font-size: 18px;
+}
+
+.dimensionContainer{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.typesContainer{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.typeUnique{
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.type{
+  margin: 0px;
+  padding: 4px 20px 4px 20px;
+  text-transform: capitalize;
+  /* font-weight: bolder; */
+  color: #17D7A0;
+  font-size: 18px;
+}
+
+.image{
+  max-width: 270px;
+  max-height: 270px;
+}

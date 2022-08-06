@@ -1,0 +1,41 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  width: 38vw;
+  height: 38vw;
+  background-color: #0026fc2c;
+  border-radius: 10px;
+  display: flex;
+}
+
+.btn {
+  width: 12vw;
+  margin-top: 3vh;
+  /* margin-left: 50vw; */
+  background-color: #15c9ae;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgb(0, 4, 255);
+  font-size: 1.5vw;
+  cursor: pointer;
+  font-family: 'Pokemon Solid', Arial, Helvetica, sans-serif;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 20px 0px rgb(11, 97, 168);
+  background-color: rgb(255, 255, 255);
+  color: #2019f6eb;
+}

@@ -1,0 +1,67 @@
+/* .container{
+  background: url("../../images/home2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+} */
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
+.container{
+  background-color: #ffcd4f;
+  min-height: 739px;
+}
+
+.home {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+
+.filters {
+  display: inline-flex;
+  position: fixed;
+  margin-left: 82%;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  width: vw;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.cards {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  width: 80vw;
+  /* height: 100%; */
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.btn {
+  margin-top: 1vh;
+  width: 10vw;
+  height: 7vh;
+  background-color: #2019f6eb;
+  color: #FFC325;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.651);
+  font-family: 'Pokemon Solid', Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 5px 0px rgb(4, 212, 235);
+  background-color: #ffffffff;
+  color: #2019f6eb;
+}
