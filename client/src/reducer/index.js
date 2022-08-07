@@ -10,6 +10,7 @@ import {
   FILTER_ORD_ATTACK,
   CLEAR,
   CLEAR_DETAILS,
+  GET_ONE_POKEMON
 } from '../actions/index';
 
 const initialState = {
@@ -44,6 +45,15 @@ function rootReducer(state = initialState, action) {
         ...state,
         pokemons: action.payload,
       };
+
+    case GET_ONE_POKEMON:
+      if(state.pokemons.length === 1) {
+        state.pokemons = state.pokemonsCopy
+      }
+      return {
+        ...state,
+        pokemons: state.pokemons
+      }
 
     case GET_DETAILS:
       return {
