@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom'; // eslint-disable-line no-unused-vars
 import { getDetails, clearDetails } from '../../actions';
 import styles from './Details.module.css';
 import noImage from '../../images/broken.png';
@@ -9,8 +9,19 @@ import Loading from '../../components/Loading/Loading';
 export default function Details() {
   const dispatch = useDispatch();
   const { id } = useParams();
+  const history = useHistory();
 
   const pokemonSelect = useSelector((state) => state.details);
+  let pokemons = useSelector((state) => state.pokemons);
+  const pokemonsCopy = useSelector((state) => state.pokemonsCopy);
+
+  function handlerBack(e) {
+    e.preventDefault();
+    if(pokemons.length === 1) {
+      pokemons = pokemonsCopy;
+    }
+    history.push("/home");
+  };
 
   useEffect(() => {
     dispatch(getDetails(id))
@@ -24,9 +35,13 @@ export default function Details() {
         <div className={styles.containerDetails}>
           <div className={styles.containerHome}>
             <div className={styles.home}>
-              <Link to='/home' className={styles.exit}>
-                <span className={styles.exit}>Go Home</span>
-              </Link>
+              {/* <div className={styles.exit}> */}
+                <button className={styles.exit} onClick={(e) => {
+                  handlerBack(e);
+                }}>
+                  Go Home
+                </button>
+              {/* </div> */}
             </div>
           </div>
           <div className={styles.imageTitle}>

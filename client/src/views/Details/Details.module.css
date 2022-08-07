@@ -37,7 +37,11 @@
 
 .exit{
   color: #2019f6eb;
-  text-decoration: none;
+  background: none;
+  border: 0;
+  font-family: 'Pokemon Solid', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .exit:hover{
