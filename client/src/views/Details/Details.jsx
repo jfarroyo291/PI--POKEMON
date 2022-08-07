@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useHistory } from 'react-router-dom'; // eslint-disable-line no-unused-vars
-import { getDetails, clearDetails } from '../../actions';
+import { getDetails, clearDetails, getOnePokemon } from '../../actions';
 import styles from './Details.module.css';
 import noImage from '../../images/broken.png';
 import Loading from '../../components/Loading/Loading';
@@ -12,14 +12,10 @@ export default function Details() {
   const history = useHistory();
 
   const pokemonSelect = useSelector((state) => state.details);
-  let pokemons = useSelector((state) => state.pokemons);
-  const pokemonsCopy = useSelector((state) => state.pokemonsCopy);
 
   function handlerBack(e) {
     e.preventDefault();
-    if(pokemons.length === 1) {
-      pokemons = pokemonsCopy;
-    }
+    dispatch(getOnePokemon());
     history.push("/home");
   };
 

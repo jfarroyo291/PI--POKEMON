@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { Link, useHistory } from 'react-router-dom'; // eslint-disable-line no-unused-vars
-import { getTypes, clear, getPokemons } from '../../actions'; // eslint-disable-line no-unused-vars
+import { getTypes, clear, getOnePokemon } from '../../actions'; // eslint-disable-line no-unused-vars
 import { useDispatch, useSelector } from 'react-redux';
 import Ash from '../../images/Landing/Ash2.png';
 import styles from './Create.module.css';
@@ -10,7 +10,7 @@ export default function Create() {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types);
   let pokemons = useSelector((state) => state.pokemons);
-  const pokemonsCopy = useSelector((state) => state.pokemonsCopy)
+  //const pokemonsCopy = useSelector((state) => state.pokemonsCopy)
   const [errors, setErrors] = useState({});
   const history = useHistory(); // eslint-disable-line no-unused-vars
 
@@ -102,9 +102,7 @@ export default function Create() {
 
   function handlerReset(e) {
     e.preventDefault();
-    if(pokemons.length === 1) {
-      pokemons = pokemonsCopy
-    }
+    dispatch(getOnePokemon());
     history.push("/home");
   };
 
