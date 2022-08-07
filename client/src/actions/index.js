@@ -10,7 +10,7 @@ export const FILTER_ORD_NAME = 'ORD_NAME';
 export const FILTER_TYPE = 'FILTER_TYPE';
 export const FILTER_ORD_ATTACK = 'ORD_ATTACK';
 export const GET_DETAILS = 'GET_DETAILS';
-export const GET_POKEMON_DB = 'GET_POKEMON_DB';
+export const GET_ONE_POKEMON = 'GET_ONE_POKEMON';
 
 /* export function createPokemon(payload) {
   return async () => {
@@ -95,6 +95,13 @@ export function getDetails(id) {
     }
   };
 };
+
+export function getOnePokemon(payload) {
+  return {
+    type: GET_ONE_POKEMON,
+    payload,
+  }
+}
 
 export function clear() {
   return {
