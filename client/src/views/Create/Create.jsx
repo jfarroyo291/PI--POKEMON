@@ -9,7 +9,8 @@ import styles from './Create.module.css';
 export default function Create() {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types);
-  const pokemons = useSelector((state) => state.pokemons);
+  let pokemons = useSelector((state) => state.pokemons);
+  const pokemonsCopy = useSelector((state) => state.pokemonsCopy)
   const [errors, setErrors] = useState({});
   const history = useHistory(); // eslint-disable-line no-unused-vars
 
@@ -102,7 +103,7 @@ export default function Create() {
   function handlerReset(e) {
     e.preventDefault();
     if(pokemons.length === 1) {
-      dispatch(clear(dispatch));
+      pokemons = pokemonsCopy
     }
     history.push("/home");
   };
@@ -144,10 +145,8 @@ export default function Create() {
         image: '',
         types: [],
       });
-      dispatch(clear(dispatch));
+      dispatch(clear());
       history.push("/home");
-      //alert('Se creo el pokemon');
-      //window.location.href = `http://localhost:3000/home`;
     }
   };
 
