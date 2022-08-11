@@ -15,7 +15,7 @@ export const GET_ONE_POKEMON = 'GET_ONE_POKEMON';
 export function getPokemons() {
   return async (dispatch) => {
     //try {
-      await fetch('/pokemons')
+      await axios('/pokemons')
       .then(res => res.json())
       .then(pokemons => {
         return dispatch ({
