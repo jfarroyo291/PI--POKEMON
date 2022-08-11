@@ -43,7 +43,7 @@ function rootReducer(state = initialState, action) {
     case GET_POKEMON_NAME:
       return {
         ...state,
-        pokemons: action.payload,
+        pokemons: action.payload
       };
 
     case GET_ONE_POKEMON:
@@ -53,7 +53,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         pokemons: state.pokemons
-      }
+      };
 
     case GET_DETAILS:
       return {
@@ -71,7 +71,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         details: action.payload
-      }
+      };
 
     case FILTER_CREATED:
       let copyPokemonsFC = state.pokemonsCopy;

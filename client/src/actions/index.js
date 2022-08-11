@@ -12,17 +12,10 @@ export const FILTER_ORD_ATTACK = 'ORD_ATTACK';
 export const GET_DETAILS = 'GET_DETAILS';
 export const GET_ONE_POKEMON = 'GET_ONE_POKEMON';
 
-/* export function createPokemon(payload) {
-  return async () => {
-    const pokemonCreated = await axios.post('http://localhost:3001/pokemons', payload);
-    return pokemonCreated
-  };
-}; */
-
 export function getPokemons() {
   return async (dispatch) => {
     //try {
-      await fetch('http://localhost:3001/pokemons')
+      await fetch('/pokemons')
       .then(res => res.json())
       .then(pokemons => {
         return dispatch ({
@@ -41,27 +34,17 @@ export function getPokemons() {
   };
 };
 
-/* export function getPokemonsDB() {
-  return async (dispatch) => {
-    let json = await axios.get('http://localhost:3001/pokemonsdb');
-    return dispatch ({
-      type: GET_POKEMON_DB,
-      payload: json.data
-    })
-  };
-}; */
-
 export function getPokemonName(name) {
   return async (dispatch) => {
     try {
-      let json = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+      let json = await axios.get(`/pokemons?name=${name}`)
       return dispatch({
         type: GET_POKEMON_NAME,
         payload: json.data
       });
     } catch(error) {
       alert(`Pokemon ${name} not found`);
-      window.location.href = 'http://localhost:3000/home';
+      window.location.href = '/home';
       console.log(error);
     }
   };
@@ -69,7 +52,7 @@ export function getPokemonName(name) {
 
 export function getTypes() {
   return (dispatch) => {
-    axios('http://localhost:3001/types')
+    axios('/types')
     .then((json) => {
       return dispatch ({
         type: GET_TYPES,
@@ -83,7 +66,7 @@ export function getTypes() {
 export function getDetails(id) {
   return async (dispatch) => {
     try {
-      let json = await axios.get(`http://localhost:3001/pokemons/${id}`)
+      let json = await axios.get(`/pokemons/${id}`)
       return dispatch ({
         type: GET_DETAILS,
         payload: json.data
@@ -91,7 +74,7 @@ export function getDetails(id) {
     } catch {
       alert(`The specified id does not exist`);
       //console.log(error);
-      window.location.href = `http://localhost:3000/home`;
+      window.location.href = `/home`;
     }
   };
 };

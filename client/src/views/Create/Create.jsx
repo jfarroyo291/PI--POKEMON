@@ -131,7 +131,7 @@ export default function Create() {
         alert('Cannot create pokemon without types')
       }
     else {
-      await axios.post('http://localhost:3001/pokemons', input);
+      await axios.post('/pokemons', input);
       setInput({
         name: '',
         hp: '',
