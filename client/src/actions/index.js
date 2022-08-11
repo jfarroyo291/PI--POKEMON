@@ -14,23 +14,23 @@ export const GET_ONE_POKEMON = 'GET_ONE_POKEMON';
 
 export function getPokemons() {
   return async (dispatch) => {
-    //try {
-      await axios('/pokemons')
-      .then(res => res.json())
+    try {
+      let json = await axios.get('/pokemons')
+      /* .then(res => res.json())
       .then(pokemons => {
         return dispatch ({
           type: GET_POKEMONS,
           payload:pokemons
         })
       })
-      .catch((err) => { console.log(err) })
-      /* return dispatch({
+      .catch((err) => { console.log(err) }) */
+      return dispatch({
         type: GET_POKEMONS,
         payload: json.data
-      }) */
-    /* } catch (error) {
+      })
+    } catch (error) {
       console.log(error)
-    } */
+    }
   };
 };
 
